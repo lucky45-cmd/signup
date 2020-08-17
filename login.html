@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container"><br>
+		
+		<div class="col-lg-6 m-auto d-block">
+	<form action="#" class="bg-light" onsubmit="return validation()">
+ <div class="form-group">
+					<label for="user" class="font-weight-bold"> Username: </label>
+					<input type="text" name="user" class="form-control" id="user">
+					<span   id="username" class="text-danger font-weight-bold"> </span>
+				</div>
+<div class="form-group">
+					<label for="pass" class="font-weight-bold"> Password: </label>
+					<input type="text" name="user" class="form-control" id="pass">
+					<span   id="password" class="text-danger font-weight-bold"> </span>
+				</div>
+<div class="form-group">
+					<label for="conpass" class="font-weight-bold"> Confirm Password: </label>
+					<input type="text" name="conpass" class="form-control" id="conpass">
+					<span   id="confirmpass" class="text-danger font-weight-bold"> </span>
+				</div>
+    <input type="submit" name="submit" value="submit" class="btn btn-success">
+</form></div><br><br>
+</div>
+</div>
+<script type="text/javascript">
+	
+	function validation(){
+
+	      var user = document.getElementById('user').value;
+	      var pass = document.getElementById('pass').value;
+	      var conpass = document.getElementById('conpass').value;
+
+	        if(user == ""){
+				document.getElementById('username').innerHTML =" ** Please fill the username field";
+				return false;
+			}
+			if((user.length <= 2) || (user.length > 20)) {
+				document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";
+				return false;	
+			}
+if(!isNaN(user)){
+				document.getElementById('username').innerHTML =" ** only characters are allowed";
+				return false;
+			}
+			if(pass == ""){
+				document.getElementById('password').innerHTML =" ** Please fill the password field";
+				return false;
+			}
+			if((pass.length <= 5) || (pass.length > 20)) {
+				document.getElementById('password').innerHTML =" ** Password lenght must be between 5 and 20";
+				return false;	
+			}
+			if(pass!=conpass){
+				document.getElementById('confirmpass').innerHTML =" ** Password does not match the confirm password";
+				return false;
+			}
+if(conpass == ""){
+				document.getElementById('confirmpass').innerHTML =" ** Please fill the confirmpassword field";
+				return false;
+			}
+		}
+
+		</script>
+
+</body>
+</html>
